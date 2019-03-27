@@ -10,7 +10,9 @@
     </div>
     <p>
       Você não tem conta?
-      <router-link to="/sign-up">crie uma conta</router-link>
+      <span>
+        <router-link to="/registrar">crie uma conta</router-link>
+      </span>
     </p>
   </div>
 </template>

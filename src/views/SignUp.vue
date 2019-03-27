@@ -8,7 +8,7 @@
     <button>Registrar</button>
     <span>
       ou retorne ao
-      <router-link to="/login">login</router-link>.
+      <router-link to="/login"> login.</router-link>
     </span>
   </div>
 </template>
