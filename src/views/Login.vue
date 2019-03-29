@@ -6,7 +6,7 @@
     <input type="password" placeholder="Senha">
     <br>
     <div class="btn-login">
-      <button>Login</button>
+      <button @click="login">Login</button>
     </div>
     <p>
       Você não tem conta?
@@ -23,7 +23,11 @@ export default {
   data() {
     return {};
   },
-  methods: {}
+  methods: {
+    login: function() {
+       this.$router.replace("home");
+    }
+  }
 };
 </script>
 

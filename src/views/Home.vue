@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <button>Logout</button>
+    <button>Sair</button>
   </div>
 </template>
 
