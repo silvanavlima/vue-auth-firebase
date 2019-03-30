@@ -1,11 +1,19 @@
 <template>
   <div class="sign-up">
     <p>Crie uma nova conta</p>
-    <input type="text" placeholder="Email">
+    <input
+      type="text"
+      placeholder="Email"
+      v-model="email"
+    >
     <br>
-    <input type="password" placeholder="Password">
+    <input
+      type="password"
+      placeholder="Senha"
+      v-model="senha"
+    >
     <br>
-    <button>Registrar</button>
+    <button @click="signUp">Registrar</button>
     <span>
       ou retorne ao
       <router-link to="/login"> login.</router-link>
@@ -13,13 +21,30 @@
   </div>
 </template>
 
- <script>
+<script>
+import firebase from 'firebase';
+
 export default {
-  name: "signUp",
-  data() {
-    return {};
+  name: 'signUp',
+  data () {
+    return {
+      email: '',
+      senha: '',
+    };
   },
-  methods: {}
+  methods: {
+    signUp () {
+      firebase.auth().createUserWithEmailAndPassword(this.email, this.senha).then(
+        (user) => {
+          this.$router.replace('home'),
+            alert('Sua conta foi cadastrata com sucesso!')
+        },
+        (err) => {
+          alert('Aconteceu algo inesperado. ' + err.message)
+        }
+      );
+    },
+  },
 };
 </script>
 
